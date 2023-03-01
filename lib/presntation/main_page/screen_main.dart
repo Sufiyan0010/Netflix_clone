@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:netflix_clone/core/colors/colors.dart';
 import 'package:netflix_clone/presntation/fast_laugh/screen_fastlaugh.dart';
 import 'package:netflix_clone/presntation/home/screen_home.dart';
 import 'package:netflix_clone/presntation/new_and_hot/screen_new_and_hot.dart';
@@ -14,7 +13,7 @@ class ScreenMain extends StatelessWidget {
     const ScreenNewAndHot(),
     const ScreenFastLaugh(),
     const ScreenSearch(),
-    const ScreenDownloads()
+     ScreenDownloads()
   ];
 
   @override

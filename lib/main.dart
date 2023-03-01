@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:netflix_clone/core/colors/colors.dart';
 
 import 'presntation/main_page/screen_main.dart';
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Netflix Demo',
       theme: ThemeData(
+        fontFamily: GoogleFonts.montserrat().fontFamily,
         scaffoldBackgroundColor:backgroundColor,
           colorScheme: ColorScheme.fromSwatch(
             primarySwatch: Colors.blue,
