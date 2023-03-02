@@ -6,6 +6,7 @@ import 'package:netflix_clone/presntation/search/screen_search.dart';
 import 'package:netflix_clone/presntation/main_page/widgets/bottom_nav.dart';
 import 'package:netflix_clone/presntation/downloads/screen_downloads.dart';
 
+
 class ScreenMain extends StatelessWidget {
   ScreenMain({super.key});
   final _pages = [

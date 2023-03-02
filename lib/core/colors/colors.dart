@@ -4,7 +4,7 @@ const backgroundColor = Colors.black;
 
 const whiteColor = Colors.white;
 
-const buttonBlueColor = Colors.blue;
+final buttonBlueColor = Colors.blueAccent[700];
 
 const buttonWhiteColor = Colors.white;
 
