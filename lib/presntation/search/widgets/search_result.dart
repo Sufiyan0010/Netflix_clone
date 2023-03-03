@@ -42,6 +42,7 @@ class MainCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
+        color: Colors.amber,
         image: const DecorationImage(
           image: NetworkImage(imageUrl),
           fit: BoxFit.cover,

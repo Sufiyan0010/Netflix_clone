@@ -56,7 +56,6 @@ class Section2 extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
-       
         const Text(
           "We will download a personalised selection of movies and shows for you,so there's always somthing to watch on your device",
           textAlign: TextAlign.center,
