@@ -1,14 +1,14 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../../../../core/constants.dart';
+
 part 'search_responce.g.dart';
 
 @JsonSerializable()
 class SearchResponce {
   @JsonKey(name: 'results')
   List<SearchResultData>? results;
-  SearchResponce({
-    this.results = const[]
-  });
+  SearchResponce({this.results = const []});
 
   factory SearchResponce.fromJson(Map<String, dynamic> json) {
     return _$SearchResponceFromJson(json);
@@ -29,6 +29,8 @@ class SearchResultData {
 
   @JsonKey(name: 'poster_path')
   String? posterPath;
+
+  
 
   SearchResultData({
     this.backdropPath,
