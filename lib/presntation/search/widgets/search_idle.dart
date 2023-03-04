@@ -15,7 +15,9 @@ class SearchIdleWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-     const  searchTitle(title: 'Top Searches',),
+        const searchTitle(
+          title: 'Top Searches',
+        ),
         khieght,
         Expanded(
           child: ListView.separated(
@@ -31,8 +33,6 @@ class SearchIdleWidget extends StatelessWidget {
     );
   }
 }
-
-
 
 class TopSearchTile extends StatelessWidget {
   const TopSearchTile({super.key});

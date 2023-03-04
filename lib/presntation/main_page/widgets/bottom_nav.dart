@@ -15,7 +15,6 @@ class BottomNavigationWidget extends StatelessWidget {
           onTap: (index) {
             indexChangeNotifier.value = index;
           },
-          
           type: BottomNavigationBarType.fixed,
           backgroundColor: Colors.black,
           selectedItemColor: Colors.white,
@@ -28,12 +27,10 @@ class BottomNavigationWidget extends StatelessWidget {
           ),
           items: const [
             BottomNavigationBarItem(
-              
               icon: Icon(
                 Icons.home,
               ),
               label: 'Home',
-              
             ),
             BottomNavigationBarItem(
               icon: Icon(

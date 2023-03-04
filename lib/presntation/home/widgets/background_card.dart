@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import '../../../core/colors/colors.dart';
@@ -14,7 +13,7 @@ class BackroundCard extends StatelessWidget {
       children: [
         Container(
           width: double.infinity,
-          height: 450,
+          height: MediaQuery.of(context).size.height * 8 / 10,
           decoration: const BoxDecoration(
             color: Colors.amber,
             image: DecorationImage(
@@ -48,7 +47,8 @@ class BackroundCard extends StatelessWidget {
       ],
     );
   }
-   TextButton _PlayButton() {
+
+  TextButton _PlayButton() {
     return TextButton.icon(
       onPressed: () {},
       style: const ButtonStyle(

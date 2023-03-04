@@ -26,3 +26,5 @@ const newHotTempImage =
 
 const newHotTempImage2 =
     "https://www.themoviedb.org/t/p/w250_and_h141_face/75HgaphatW0PDI3XIHQWZUpbhn6.jpg";
+
+const imageAppendUrl = "https://image.tmdb.org/t/p/w500";

@@ -13,7 +13,7 @@ class SerachResultwidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-       const searchTitle(title: 'Movies & Tv'),
+        const searchTitle(title: 'Movies & Tv'),
         khieght,
         Expanded(
           child: GridView.count(
@@ -42,13 +42,12 @@ class MainCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.amber,
-        image: const DecorationImage(
-          image: NetworkImage(imageUrl),
-          fit: BoxFit.cover,
-        ),
-        borderRadius: BorderRadius.circular(8)
-      ),
+          color: Colors.amber,
+          image: const DecorationImage(
+            image: NetworkImage(imageUrl),
+            fit: BoxFit.cover,
+          ),
+          borderRadius: BorderRadius.circular(8)),
     );
   }
 }
