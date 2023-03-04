@@ -25,7 +25,9 @@ class SearchImpl implements SerachService {
       } else {
         return const Left(MainFailure.ServerFailure());
       }
-    } catch (_) {
+    } on DioError catch (e) {
+      return const Left(MainFailure.clientFailure());
+    } catch (e) {
       return const Left(MainFailure.clientFailure());
     }
   }

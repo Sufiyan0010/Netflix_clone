@@ -26,7 +26,7 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
     on<Initialize>((event, emit) async {
       if (state.idleList.isNotEmpty) {
         emit(
-           SearchState(
+          SearchState(
             searchResultList: [],
             idleList: state.idleList,
             isLoading: false,
@@ -70,10 +70,39 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
     /* 
     search result state
     */
-    on<SearchMovie>((event, emit) {
+    on<SearchMovie>((event, emit) async {
       // call search movie api
-      _serachService.searchMovies(movieQuery: event.movieQuery);
+      emit(
+        const SearchState(
+          searchResultList: [],
+          idleList: [],
+          isLoading: true,
+          isError: false,
+        ),
+      );
+      final _result =
+          await _serachService.searchMovies(movieQuery: event.movieQuery);
+
+      final _state = _result.fold(
+        (MainFailure f) {
+          return const SearchState(
+            searchResultList: [],
+            idleList: [],
+            isLoading: false,
+            isError: true,
+          );
+        },
+        (SearchResponce r) {
+          return SearchState(
+            searchResultList: r.results,
+            idleList: [],
+            isLoading: false,
+            isError: false,
+          );
+        },
+      );
       // show to ui
+      emit(_state);
     });
   }
 }

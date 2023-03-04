@@ -7,7 +7,7 @@ part 'search_responce.g.dart';
 @JsonSerializable()
 class SearchResponce {
   @JsonKey(name: 'results')
-  List<SearchResultData>? results;
+  List<SearchResultData> results;
   SearchResponce({this.results = const []});
 
   factory SearchResponce.fromJson(Map<String, dynamic> json) {
@@ -29,8 +29,7 @@ class SearchResultData {
 
   @JsonKey(name: 'poster_path')
   String? posterPath;
-
-  
+  String get posterImageUrl => '$imageAppendUrl$posterPath';
 
   SearchResultData({
     this.backdropPath,
