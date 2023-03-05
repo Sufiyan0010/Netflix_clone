@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:netflix_clone/core/colors/colors.dart';
 
+import '../../../core/constants.dart';
+
 class Videowidget extends StatelessWidget {
   final String url;
   const Videowidget({
@@ -33,23 +35,34 @@ class Videowidget extends StatelessWidget {
             },
             errorBuilder: (BuildContext _, Object a, StackTrace? trace) {
               return Center(
-                child: Stack(
-                  
-                  children: const [
-                    CircularProgressIndicator(
-                      color: greyColor,
-                      strokeWidth: 2,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.all(6.0),
-                      child: Icon(
-                        Icons.wifi_off_outlined,
-                        color: greyColor,
-                      ),
-                    ),
-                  ],
-                ),
-              );
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Stack(
+                              children: const [
+                                CircularProgressIndicator(
+                                  color: greyColor,
+                                  strokeWidth: 2,
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.all(6.0),
+                                  child: Icon(
+                                    Icons.wifi_off_outlined,
+                                    color: greyColor,
+                                  ),
+                                ),
+                              ],
+                            ),
+                           khieght,
+                            const Text(
+                              'NetWork Error',
+                              style: TextStyle(
+                                color: greyColor,
+                              ),
+                            )
+                          ],
+                        ),
+                      );
             },
           ),
         ),
