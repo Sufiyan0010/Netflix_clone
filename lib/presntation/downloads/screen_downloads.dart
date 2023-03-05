@@ -243,6 +243,7 @@ class DownloadsImageWidget extends StatelessWidget {
               fit: BoxFit.cover,
               image: NetworkImage(
                 imagesList,
+                
               ),
             ),
           ),

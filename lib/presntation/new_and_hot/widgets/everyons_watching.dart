@@ -6,8 +6,15 @@ import '../../home/widgets/custom_button.dart';
 import 'video_widget.dart';
 
 class EveryonsWatchingwidget extends StatelessWidget {
+  final String backdropPath;
+  final String description;
+  final String movieName;
+
   const EveryonsWatchingwidget({
     super.key,
+    required this.backdropPath,
+    required this.description,
+    required this.movieName,
   });
 
   @override
@@ -16,22 +23,27 @@ class EveryonsWatchingwidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         khieght,
-        const Text(
-          'Friends',
-          style: TextStyle(
+        Text(
+          movieName,
+          style: const TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 20,
           ),
         ),
         khieght,
-        const Text(
-          'This hit sitcom follows the merry misadventures of six 20-something pals as they navigation the pitfals of work,life love in 1990s manhattan',
-          style: TextStyle(
+        Text(
+          description,
+          maxLines: 5,
+          overflow: TextOverflow.ellipsis,
+          style: const TextStyle(
             color: greyColor,
+            
           ),
         ),
         khieght,
-        const Videowidget(),
+        Videowidget(
+          url: backdropPath,
+        ),
         khieght,
         Row(
           mainAxisAlignment: MainAxisAlignment.end,

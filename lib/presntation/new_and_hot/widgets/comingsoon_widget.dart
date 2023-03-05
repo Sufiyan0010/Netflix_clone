@@ -6,8 +6,21 @@ import '../../home/widgets/custom_button.dart';
 import 'video_widget.dart';
 
 class ComingSoonWidget extends StatelessWidget {
+  final String id;
+  final String month;
+  final String day;
+  final String backdropPath;
+  final String description;
+  final String movieName;
+
   const ComingSoonWidget({
     super.key,
+    required this.id,
+    required this.month,
+    required this.day,
+    required this.backdropPath,
+    required this.movieName,
+    required this.description,
   });
 
   @override
@@ -18,25 +31,21 @@ class ComingSoonWidget extends StatelessWidget {
         SizedBox(
           width: 50,
           height: 400,
-          child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: const [
-                Text(
-                  "FEB",
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                      color: greyColor),
-                ),
-                Text(
-                  "11",
-                  style: TextStyle(
-                    letterSpacing: 4,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 30,
-                  ),
-                )
-              ]),
+          child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
+            Text(
+              month,
+              style: const TextStyle(
+                  fontWeight: FontWeight.bold, fontSize: 18, color: greyColor),
+            ),
+            Text(
+              day,
+              style: const TextStyle(
+                letterSpacing: 4,
+                fontWeight: FontWeight.bold,
+                fontSize: 25,
+              ),
+            )
+          ]),
         ),
         SizedBox(
           width: size.width - 50,
@@ -44,19 +53,24 @@ class ComingSoonWidget extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Videowidget(),
+               Videowidget(url: backdropPath,),
               Row(
                 // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text(
-                    'Money Heist',
-                    style: TextStyle(
-                      fontSize: 25,
-                      letterSpacing: -1,
-                      fontWeight: FontWeight.bold,
+                  Expanded(
+                    child: Text(
+                      movieName,
+                      maxLines: 1,
+                      overflow:TextOverflow.ellipsis ,
+                      style: const TextStyle(
+                        fontSize: 20,
+                        color: greyColor,
+                       
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
-                  const Spacer(),
+                 
                   Row(
                     children: const [
                       CustomButtonWidget(
@@ -78,22 +92,26 @@ class ComingSoonWidget extends StatelessWidget {
                 ],
               ),
               khieght,
-              const Text("Coming on friday"),
+              Text("Coming on $day $month"),
               khieght,
-              const Text(
-                'Money Heist',
-                style: TextStyle(
+              Text(
+                movieName,
+                style: const TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 18,
                 ),
               ),
               khieght,
-              const Text(
-                'Landing the lead in the school musical is a dream come true for jodi,until the pressure sends her confidence--and her relationship--into a tailspin',
-                style: TextStyle(
-                  color: greyColor,
+              Expanded(
+                child: Text(
+                  description,
+                  maxLines: 5,
+                  style: const TextStyle(
+                    color: greyColor,
+                  ),
                 ),
               ),
+               
             ],
           ),
         ),

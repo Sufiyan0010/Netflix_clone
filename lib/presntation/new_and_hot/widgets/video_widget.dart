@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-
-import '../../../core/constants.dart';
+import 'package:netflix_clone/core/colors/colors.dart';
 
 class Videowidget extends StatelessWidget {
+  final String url;
   const Videowidget({
+    required this.url,
     super.key,
   });
 
@@ -15,8 +16,41 @@ class Videowidget extends StatelessWidget {
           width: double.infinity,
           height: 200,
           child: Image.network(
-            newHotTempImage,
+            url,
             fit: BoxFit.cover,
+            loadingBuilder:
+                (BuildContext _, Widget child, ImageChunkEvent? progress) {
+              if (progress == null) {
+                return child;
+              } else {
+                return const Center(
+                  child: CircularProgressIndicator(
+                    color: greyColor,
+                    strokeWidth: 2,
+                  ),
+                );
+              }
+            },
+            errorBuilder: (BuildContext _, Object a, StackTrace? trace) {
+              return Center(
+                child: Stack(
+                  
+                  children: const [
+                    CircularProgressIndicator(
+                      color: greyColor,
+                      strokeWidth: 2,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.all(6.0),
+                      child: Icon(
+                        Icons.wifi_off_outlined,
+                        color: greyColor,
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            },
           ),
         ),
         Positioned(
