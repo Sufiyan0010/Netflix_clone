@@ -4,10 +4,10 @@ import 'package:netflix_clone/application/downloads/bloc/downloads_bloc.dart';
 import 'package:netflix_clone/application/fast_laugh/fast_laugh_bloc.dart';
 import 'package:netflix_clone/application/home/home_bloc.dart';
 import 'package:netflix_clone/application/hot_and_new/hot_and_new_bloc.dart';
-import 'package:netflix_clone/application/serach/search_bloc.dart';
 import 'package:netflix_clone/core/colors/colors.dart';
 import 'package:netflix_clone/domain/core/di/injectable.dart';
 import 'package:netflix_clone/presntation/splash/splash_screen.dart';
+import 'application/search/search_bloc.dart';
 import 'presntation/main_page/screen_main.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

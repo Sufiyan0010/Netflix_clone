@@ -15,6 +15,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   HotAndNewService _homeService;
 
   HomeBloc(this._homeService) : super(HomeState.initial()) {
+    
     // on event get homescreen data
     on<GetHomeScreenData>((event, emit) async {
       //send loading to Ui

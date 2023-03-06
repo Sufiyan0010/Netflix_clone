@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:netflix_clone/application/serach/search_bloc.dart';
 import 'package:netflix_clone/core/constants.dart';
 import 'package:netflix_clone/presntation/search/widgets/search_idle.dart';
 import 'package:netflix_clone/presntation/search/widgets/search_result.dart';
 
+import '../../application/search/search_bloc.dart';
 import '../../domain/core/debounce/debounce.dart';
 
 class ScreenSearch extends StatelessWidget {

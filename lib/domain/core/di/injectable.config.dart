@@ -12,7 +12,7 @@ import '../../../application/downloads/bloc/downloads_bloc.dart' as _i9;
 import '../../../application/fast_laugh/fast_laugh_bloc.dart' as _i10;
 import '../../../application/home/home_bloc.dart' as _i11;
 import '../../../application/hot_and_new/hot_and_new_bloc.dart' as _i12;
-import '../../../application/serach/search_bloc.dart' as _i13;
+import '../../../application/search/search_bloc.dart' as _i13;
 import '../../../infrastructre/downloads/downloads_repository.dart' as _i6;
 import '../../../infrastructre/hot_and_new/hot_and_new_impl.dart' as _i4;
 import '../../../infrastructre/search/search_impl.dart' as _i8;

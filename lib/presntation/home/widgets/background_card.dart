@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:netflix_clone/application/downloads/bloc/downloads_bloc.dart';
 
 import '../../../core/colors/colors.dart';
 import '../../../core/constants.dart';
@@ -9,18 +11,26 @@ class BackroundCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+     WidgetsBinding.instance.addPostFrameCallback((_) {
+      BlocProvider.of<DownloadsBloc>(context)
+          .add(const DownloadsEvent.getDownloadsImage());
+    });
     return Stack(
       children: [
-        Container(
-          width: double.infinity,
-          height: MediaQuery.of(context).size.height * 8 / 10,
-          decoration: const BoxDecoration(
-            color: Colors.amber,
-            image: DecorationImage(
-              fit: BoxFit.cover,
-              image: NetworkImage(kMainImage),
-            ),
-          ),
+        BlocBuilder<DownloadsBloc, DownloadsState>(
+          builder: (context, state) {
+            return Container(
+              width: double.infinity,
+              height: MediaQuery.of(context).size.height * 8 / 10,
+              decoration:  BoxDecoration(
+                color: Colors.amber,
+                image: DecorationImage(
+                  fit: BoxFit.cover,
+                  image: NetworkImage('$imageAppendUrl${state.downloads[1].posterPath}'),
+                ),
+              ),
+            );
+          },
         ),
         Positioned(
           bottom: 0,

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:netflix_clone/application/serach/search_bloc.dart';
-import 'package:netflix_clone/core/colors/colors.dart';
 import 'package:netflix_clone/core/constants.dart';
 import 'package:netflix_clone/presntation/search/widgets/title.dart';
+
+import '../../../application/search/search_bloc.dart';
 
 class SerachResultwidget extends StatelessWidget {
   const SerachResultwidget({super.key});
